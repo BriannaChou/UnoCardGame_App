@@ -5,17 +5,28 @@
  */
 package com.mycompany.uno;
 
+import java.awt.Font;
+import java.util.ArrayList;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author briannachou
  */
 public class AddPlayerName extends javax.swing.JFrame {
-
+    public ArrayList<String> playerIDs;
     /**
      * Creates new form AddPlayerName
      */
     public AddPlayerName() {
         initComponents();
+        playerIDs = new ArrayList<>();
+    }
+    
+    public String[] getPlids(){
+        String[] ids = playerIDs.toArray(new String[playerIDs.size()]);
+        return ids;
     }
 
     /**
@@ -39,6 +50,11 @@ public class AddPlayerName extends javax.swing.JFrame {
 
         playGameButton.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         playGameButton.setText("PLAY GAME");
+        playGameButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                playGameButtonActionPerformed(evt);
+            }
+        });
 
         saveNameButton.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
         saveNameButton.setText("Save Name");
@@ -116,8 +132,48 @@ public class AddPlayerName extends javax.swing.JFrame {
 
     private void saveNameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveNameButtonActionPerformed
         // Save button logic
-        if()
+        //CPU is auto added to playerIDs
+        playerIDs.add(cpuLabel.getText().trim());
+        
+        if(plidTxtBox.getText().isEmpty()){
+            JLabel msg = new JLabel("Please enter your name!");
+            msg.setFont(new Font("Arial", Font.BOLD,48));
+            JOptionPane.showMessageDialog(null,msg);
+        }
+        else{
+            String name = plidTxtBox.getText().trim();
+            playerIDs.add(name);
+            
+            if(playerIDs.size() == 1){ //MAY NEED TO CHANGE THIS!!!!!!!!!!!!!!!!!
+                plidOneLabel.setText(playerIDs.get(0));
+                JLabel msg = new JLabel("Successful Save!");
+                msg.setFont(new Font("Arial", Font.BOLD,48));
+                JOptionPane.showMessageDialog(null,msg);
+                plidTxtBox.setText("");
+            }
+            if(playerIDs.size() == 3){
+                playerIDs.remove(name);
+                JLabel msg = new JLabel("There can only be 2 players!");
+                msg.setFont(new Font("Arial", Font.BOLD,48));
+                plidTxtBox.setText("");
+            }
+        }
     }//GEN-LAST:event_saveNameButtonActionPerformed
+
+    private void playGameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playGameButtonActionPerformed
+        // Play Game logic
+        //First need to check that there are enough players to play!
+        if(playerIDs.size() == 0){
+            JLabel msg = new JLabel("There must be at least one player!");
+            msg.setFont(new Font("Arial", Font.BOLD,48));
+            JOptionPane.showMessageDialog(null,msg);
+            plidTxtBox.setText("");
+        }
+        else{
+            this.dispose();
+            new GameStage(playerIDs).setVisible(true); //Moving to game screen!
+        }
+    }//GEN-LAST:event_playGameButtonActionPerformed
 
     /**
      * @param args the command line arguments

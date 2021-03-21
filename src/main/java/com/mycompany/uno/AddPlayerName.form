@@ -92,6 +92,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="PLAY GAME"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="playGameButtonActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="saveNameButton">
           <Properties>

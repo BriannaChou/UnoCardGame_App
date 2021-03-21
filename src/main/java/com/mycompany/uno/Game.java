@@ -49,7 +49,7 @@ public class Game {
         validValue = card.getValue(); //Checking the value of the first card to know what is a valid value for the next player to play.
 
         //Now checking for the special cases
-        if (card.getValue() == UnoCard.Value.Wild || card.getValue() == UnoCard.Value.WildDrawFour || card.getValue() == UnoCard.Value.DrawTwo || card.getValue() == UnoCard.Value.DrawFour){
+        if (card.getValue() == UnoCard.Value.Wild || card.getValue() == UnoCard.Value.WildDrawFour || card.getValue() == UnoCard.Value.DrawTwo){
             start(game); //START OVER!!! Do not have first card be a wild card.
         }
         if (card.getValue() == UnoCard.Value.Skip){
@@ -257,18 +257,7 @@ public class Game {
             msg4.setFont(new Font("Arial", Font.BOLD, 48));
             JOptionPane.showMessageDialog(null,msg4);
         }
-
-        if(initialCard.getValue() == UnoCard.Value.DrawFour){
-            plid = playerIDs[currentPlayer];
-            getPlayerHand(plid).add(unoDeck.drawCard());
-            getPlayerHand(plid).add(unoDeck.drawCard());
-            getPlayerHand(plid).add(unoDeck.drawCard());
-            getPlayerHand(plid).add(unoDeck.drawCard());
-            JLabel msg4 = new JLabel(plid + " draw 4 cards!");
-            msg4.setFont(new Font("Arial", Font.BOLD, 48));
-            JOptionPane.showMessageDialog(null,msg4);
-        }
-
+        
         if(initialCard.getValue() == UnoCard.Value.Skip){
             JLabel msg4 = new JLabel(playerIDs[currentPlayer] + " was Skipped!");
             msg4.setFont(new Font("Arial", Font.BOLD, 48));

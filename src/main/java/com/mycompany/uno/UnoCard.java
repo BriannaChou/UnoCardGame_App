@@ -22,7 +22,7 @@ public class UnoCard {
     }
 
     enum Value{
-        Zero, One, Two, Three, Four, Five, Six, Seven, Eight, Nine, DrawTwo, DrawFour, Skip, Wild, WildDrawFour;
+        Zero, One, Two, Three, Four, Five, Six, Seven, Eight, Nine, DrawTwo, Skip, Wild, WildDrawFour;
 
         private static final Value[] values = Value.values(); //Create an array of our enumeration and filling it with the value values
         public static Value getValue(int i){

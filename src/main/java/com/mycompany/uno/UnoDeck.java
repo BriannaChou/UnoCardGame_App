@@ -36,15 +36,15 @@ public class UnoDeck {
                 cards[cardsInDeck++] = new UnoCard(color,UnoCard.Value.getValue(j));
             }
 
-            UnoCard.Value[] specialValues = new UnoCard.Value[]{UnoCard.Value.DrawTwo, UnoCard.Value.Skip, UnoCard.Value.DrawFour};
+            UnoCard.Value[] specialValues = new UnoCard.Value[]{UnoCard.Value.DrawTwo, UnoCard.Value.Skip};
             for(UnoCard.Value value : specialValues){ //Starting at first value in array values, and creating two cards of special cards.
                 cards[cardsInDeck++] = new UnoCard(color, value);
                 cards[cardsInDeck++] = new UnoCard(color, value);
             }
 
-            UnoCard.Value[] wildValues = new UnoCard.Value[]{UnoCard.Value.Wild, UnoCard.Value.WildDrawFour};
+            UnoCard.Value[] wildValues = new UnoCard.Value[]{UnoCard.Value.Wild};
             for(UnoCard.Value value : wildValues){
-                for(int x = 0; x < 4; x++){
+                for(int x = 0; x < 4; x++){ 
                     cards[cardsInDeck++] = new UnoCard(UnoCard.Color.Wild, value);
                 }
 
