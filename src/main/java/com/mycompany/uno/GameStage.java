@@ -14,7 +14,7 @@ import javax.swing.JButton;
  */
 public class GameStage extends javax.swing.JFrame {
     
-    private AddPlayerNames addPlayers = new AddPlayerNames(); //ERROR!!!!!!!!!!!!!!!!!!!
+    private AddPlayerName addPlayers = new AddPlayerName();
     ArrayList<String> temp = new ArrayList<>();
     String plids[];
     Game game;
