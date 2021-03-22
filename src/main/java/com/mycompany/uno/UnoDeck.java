@@ -20,7 +20,8 @@ public class UnoDeck {
     private int cardsInDeck;
 
     public UnoDeck(){
-        cards = new UnoCard[108];
+        cards = new UnoCard[120]; //originally 108
+        reset();
     }
 
     public void reset(){
@@ -29,9 +30,9 @@ public class UnoDeck {
 
         for(int i = 0; i < colors.length-1;i++){ //Add color
             UnoCard.Color color = colors[i];
-            cards[cardsInDeck++] = new UnoCard(color, UnoCard.Value.getValue(0));
+            cards[cardsInDeck] = new UnoCard(color, UnoCard.Value.getValue(0)); //Add a single zero card !!!!!!!!!!!!!!!!!!!!!!!!!!
 
-            for(int j = 0; j < 10; j++){ //Add two cards of each number. 1-9 cards.
+            for(int j = 1; j < 10; j++){ //Add two cards of each number. 1-9 cards.
                 cards[cardsInDeck++] = new UnoCard(color,UnoCard.Value.getValue(j));
                 cards[cardsInDeck++] = new UnoCard(color,UnoCard.Value.getValue(j));
             }
@@ -42,7 +43,7 @@ public class UnoDeck {
                 cards[cardsInDeck++] = new UnoCard(color, value);
             }
 
-            UnoCard.Value[] wildValues = new UnoCard.Value[]{UnoCard.Value.Wild};
+            UnoCard.Value[] wildValues = new UnoCard.Value[]{UnoCard.Value.Wild, UnoCard.Value.WildDrawFour};
             for(UnoCard.Value value : wildValues){
                 for(int x = 0; x < 4; x++){ 
                     cards[cardsInDeck++] = new UnoCard(UnoCard.Color.Wild, value);

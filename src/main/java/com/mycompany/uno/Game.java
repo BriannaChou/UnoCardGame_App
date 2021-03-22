@@ -82,7 +82,7 @@ public class Game {
      * @return the image of the top card
      */
     public ImageIcon getTopCardImg(){
-        return new ImageIcon(validColor + "-" + validValue + ".png");
+        return new ImageIcon(validColor + "_" + validValue + ".png");
     }
 
     /**

@@ -22,6 +22,7 @@ public class AddPlayerName extends javax.swing.JFrame {
     public AddPlayerName() {
         initComponents();
         playerIDs = new ArrayList<>();
+        playerIDs.add(cpuLabel.getText().trim());//CPU is auto added to playerIDs
     }
     
     public String[] getPlids(){
@@ -47,6 +48,9 @@ public class AddPlayerName extends javax.swing.JFrame {
         cpuLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocation(new java.awt.Point(200, 500));
+
+        jPanel1.setLocation(new java.awt.Point(200, 500));
 
         playGameButton.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         playGameButton.setText("PLAY GAME");
@@ -58,6 +62,7 @@ public class AddPlayerName extends javax.swing.JFrame {
 
         saveNameButton.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
         saveNameButton.setText("Save Name");
+        saveNameButton.setLocation(new java.awt.Point(200, 500));
         saveNameButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 saveNameButtonActionPerformed(evt);
@@ -73,7 +78,7 @@ public class AddPlayerName extends javax.swing.JFrame {
         plidOneLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         cpuLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        cpuLabel.setText("CPU's name: Andromeda");
+        cpuLabel.setText("CPU");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -85,18 +90,21 @@ public class AddPlayerName extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(playGameButton))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(188, 188, 188)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(cpuLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 267, Short.MAX_VALUE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(plidTxtBox, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(plidOneLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(0, 189, Short.MAX_VALUE)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(188, 188, 188)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(cpuLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 267, Short.MAX_VALUE)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(plidTxtBox, javax.swing.GroupLayout.Alignment.TRAILING)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(256, 256, 256)
+                                .addComponent(saveNameButton, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(165, 165, 165)
+                                .addComponent(plidOneLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 165, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(256, 256, 256)
-                .addComponent(saveNameButton, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -132,8 +140,6 @@ public class AddPlayerName extends javax.swing.JFrame {
 
     private void saveNameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveNameButtonActionPerformed
         // Save button logic
-        //CPU is auto added to playerIDs
-        playerIDs.add(cpuLabel.getText().trim());
         
         if(plidTxtBox.getText().isEmpty()){
             JLabel msg = new JLabel("Please enter your name!");
@@ -144,12 +150,13 @@ public class AddPlayerName extends javax.swing.JFrame {
             String name = plidTxtBox.getText().trim();
             playerIDs.add(name);
             
-            if(playerIDs.size() == 1){ //MAY NEED TO CHANGE THIS!!!!!!!!!!!!!!!!!
-                plidOneLabel.setText(playerIDs.get(0));
+            if(playerIDs.size() == 2){
+                plidOneLabel.setText(playerIDs.get(1));
                 JLabel msg = new JLabel("Successful Save!");
                 msg.setFont(new Font("Arial", Font.BOLD,48));
                 JOptionPane.showMessageDialog(null,msg);
                 plidTxtBox.setText("");
+                System.out.println(playerIDs.get(0) + " " + playerIDs.get(1)); //DELETE LATER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             }
             if(playerIDs.size() == 3){
                 playerIDs.remove(name);
