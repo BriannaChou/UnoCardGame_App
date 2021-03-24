@@ -162,6 +162,7 @@ public class AddPlayerName extends javax.swing.JFrame {
                 playerIDs.remove(name);
                 JLabel msg = new JLabel("There can only be 2 players!");
                 msg.setFont(new Font("Arial", Font.BOLD,48));
+                JOptionPane.showMessageDialog(null,msg);
                 plidTxtBox.setText("");
             }
         }
