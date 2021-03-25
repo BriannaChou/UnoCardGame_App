@@ -35,7 +35,7 @@ public class PopUp extends javax.swing.JFrame {
         this.playerHand = game.getPlayerHand(game.getCurrentPlayer());
         choice = index;
         this.cardButtons = initialCardButtons;
-        cardLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\briannachou\\Desktop\\images\\large\\" + cardImage));
+        cardLabel.setIcon(new javax.swing.ImageIcon("/Users/briannachou/Desktop/images/PNGs/large/" + cardImage + ".png"));
         this.gameStage = initialGameStage;
         this.topCardButton = initialTopCardButton;
     }
@@ -56,8 +56,12 @@ public class PopUp extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(200, 500));
+        setPreferredSize(new java.awt.Dimension(500, 500));
+        setSize(new java.awt.Dimension(500, 500));
 
         jPanel1.setLocation(new java.awt.Point(200, 500));
+        jPanel1.setPreferredSize(new java.awt.Dimension(500, 500));
+        jPanel1.setSize(new java.awt.Dimension(500, 500));
 
         cancelBtn.setFont(new java.awt.Font("Malayalam MN", 0, 18)); // NOI18N
         cancelBtn.setText("Cancel");
@@ -75,27 +79,29 @@ public class PopUp extends javax.swing.JFrame {
             }
         });
 
+        cardLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        cardLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(useCardBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 128, Short.MAX_VALUE)
-                .addComponent(cancelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cardLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(useCardBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 128, Short.MAX_VALUE)
+                        .addComponent(cancelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(122, 122, 122)
-                .addComponent(cardLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(72, 72, 72)
-                .addComponent(cardLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(cardLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 542, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cancelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(useCardBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -110,7 +116,7 @@ public class PopUp extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
         );
 
         pack();
@@ -139,7 +145,7 @@ public class PopUp extends javax.swing.JFrame {
             if(declaredColor != UnoCard.Color.Wild){
                 gameStage.setPlidName(); //COME BACK TO THIS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                 gameStage.setButtonIcons();
-                topCardButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\briannachou\\Desktop\\images\\small\\" + game.getTopCardImg()));
+                topCardButton.setIcon(new javax.swing.ImageIcon("/Users/briannachou/Desktop/images/PNGs/small/" + game.getTopCardImg()));
                 this.dispose(); //Gets rid of the pop up screen when the player selects their card.
             }
         }

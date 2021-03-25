@@ -314,6 +314,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="Deck">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="2" name="/Users/briannachou/Desktop/images/PNGs/small/Card_Back_Alt.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Deck"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">

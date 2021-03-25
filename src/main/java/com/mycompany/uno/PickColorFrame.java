@@ -158,7 +158,7 @@ public class PickColorFrame extends javax.swing.JFrame {
         popUp.declaredColor = UnoCard.Color.Blue;
         popUp.gameStage.setPlidName(); //COME BACK TO THIS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         popUp.gameStage.setButtonIcons();
-        popUp.topCardButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\briannachou\\Desktop\\images\\small\\" + popUp.game.getTopCardImg()));
+        popUp.topCardButton.setIcon(new javax.swing.ImageIcon("/small/" + popUp.game.getTopCardImg()));
         popUp.game.setCardColor(UnoCard.Color.Blue);
         popUp.dispose();
     }//GEN-LAST:event_blueBtnActionPerformed
@@ -173,7 +173,7 @@ public class PickColorFrame extends javax.swing.JFrame {
         popUp.declaredColor = UnoCard.Color.Yellow;
         popUp.gameStage.setPlidName(); //COME BACK TO THIS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         popUp.gameStage.setButtonIcons();
-        popUp.topCardButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\briannachou\\Desktop\\images\\small\\" + popUp.game.getTopCardImg()));
+        popUp.topCardButton.setIcon(new javax.swing.ImageIcon("/small/" + popUp.game.getTopCardImg()));
         popUp.game.setCardColor(UnoCard.Color.Yellow);
         popUp.dispose();
     }//GEN-LAST:event_yellowBtnActionPerformed
@@ -188,7 +188,7 @@ public class PickColorFrame extends javax.swing.JFrame {
         popUp.declaredColor = UnoCard.Color.Red;
         popUp.gameStage.setPlidName(); //COME BACK TO THIS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         popUp.gameStage.setButtonIcons();
-        popUp.topCardButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\briannachou\\Desktop\\images\\small\\" + popUp.game.getTopCardImg()));
+        popUp.topCardButton.setIcon(new javax.swing.ImageIcon("/Users/briannachou/Desktop/images/PNGs/small/" + popUp.game.getTopCardImg()));
         popUp.game.setCardColor(UnoCard.Color.Red);
         popUp.dispose();
     }//GEN-LAST:event_redBtnActionPerformed
@@ -203,7 +203,7 @@ public class PickColorFrame extends javax.swing.JFrame {
         popUp.declaredColor = UnoCard.Color.Green;
         popUp.gameStage.setPlidName(); //COME BACK TO THIS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         popUp.gameStage.setButtonIcons();
-        popUp.topCardButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\briannachou\\Desktop\\images\\small\\" + popUp.game.getTopCardImg()));
+        popUp.topCardButton.setIcon(new javax.swing.ImageIcon("/Users/briannachou/Desktop/images/PNGs/small/" + popUp.game.getTopCardImg()));
         popUp.game.setCardColor(UnoCard.Color.Green);
         popUp.dispose();
     }//GEN-LAST:event_greenBtnActionPerformed

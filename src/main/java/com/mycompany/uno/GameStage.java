@@ -48,7 +48,7 @@ public class GameStage extends javax.swing.JFrame {
         game.start(game);
         setPlidName();
         System.out.println(game.getTopCardImg()); //DELTE LATER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        pile.setIcon(new javax.swing.ImageIcon("C:\\Users\\briannachou\\Documents\\NetBeansProjects\\Uno\\src\\main\\java\\com\\mycompany\\uno\\images\\small\\" + game.getTopCardImg())); //NEED TO CHECK THIS!!!!!!!!!!!!!!!!
+        pile.setIcon(new javax.swing.ImageIcon("/Users/briannachou/Desktop/images/PNGs/small/" + game.getTopCardImg())); //NEED TO CHECK THIS!!!!!!!!!!!!!!!!
         setButtonIcons();
     }
     
@@ -56,10 +56,17 @@ public class GameStage extends javax.swing.JFrame {
         //Turned the arrays of unocards into a single string and joins them with a comma
         String listString = game.getPlayerHand(game.getCurrentPlayer()).stream().map(Object::toString).collect(Collectors.joining(","));
         String[] cardNames = listString.split(",");
+        /*for(int i = 0; i<cardNames.length;i++){
+            System.out.println(cardNames[i]);
+        }*/
         cardIDs = new ArrayList<>(Arrays.asList(cardNames)); //Makes string arrays (cardNames) into an arraylist.
+        /*System.out.println("CARD IDS:");
+        for(int i = 0; i<cardIDs.size();i++){
+            System.out.println(cardIDs.get(i));
+        }*/
         for(int i = 0; i<cardIDs.size();i++){
             //Gets every card image and concatinated the .png to the file. Getting all the icons that each player has.
-            cardButtons.get(i).setIcon(new javax.swing.ImageIcon("C:\\Users\\briannachou\\Desktop\\images\\small\\" + cardIDs.get(i)));
+            cardButtons.get(i).setIcon(new javax.swing.ImageIcon("/Users/briannachou/Desktop/images/PNGs/small/" + cardIDs.get(i) + ".png"));
         }
         
         for(int j = cardIDs.size(); j < cardButtons.size(); j++){
@@ -251,6 +258,7 @@ public class GameStage extends javax.swing.JFrame {
             }
         });
 
+        Deck.setIcon(new javax.swing.ImageIcon("/Users/briannachou/Desktop/images/PNGs/small/Card_Back_Alt.png")); // NOI18N
         Deck.setText("Deck");
         Deck.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
