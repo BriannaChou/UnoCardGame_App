@@ -16,6 +16,8 @@ public class RulesPage extends javax.swing.JFrame {
      */
     public RulesPage() {
         initComponents();
+        setLocationRelativeTo(null);
+        jTextArea1.setEditable(false);
     }
 
     /**

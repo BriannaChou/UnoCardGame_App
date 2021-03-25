@@ -54,7 +54,7 @@ public class Game {
         }
         if (card.getValue() == UnoCard.Value.Skip){
             JLabel msg = new JLabel(playerIDs[currentPlayer] + " has been skipped!");
-            msg.setFont(new Font("Arial", Font.BOLD, 48));
+            msg.setFont(new Font("Arial", Font.BOLD, 25));
             JOptionPane.showMessageDialog(null,msg);
 
             if (gameDirection == false){
@@ -199,13 +199,13 @@ public class Game {
             
             if(initialCard.getColor() != validColor){
                 JLabel msg1 = new JLabel("Invalid player move, expected color: " + validColor + " but got color " + initialCard.getColor());
-                msg1.setFont(new Font("Arial", Font.BOLD, 48));
+                msg1.setFont(new Font("Arial", Font.BOLD, 25));
                 JOptionPane.showMessageDialog(null,msg1);
                 throw new InvalidColorSubmissionException(msg1,initialCard.getColor(),validColor);
             }
             else if(initialCard.getValue() != validValue){
                 JLabel msg2 = new JLabel("Invalid player move, expected value: " + validValue + " but got value " + initialCard.getValue());
-                msg2.setFont(new Font("Arial", Font.BOLD, 48));
+                msg2.setFont(new Font("Arial", Font.BOLD, 25));
                 JOptionPane.showMessageDialog(null,msg2);
                 throw new InvalidValueSubmissionException(msg2,initialCard.getValue(),validValue);
             }
@@ -215,7 +215,7 @@ public class Game {
         //WE WILL WANT TO CHANGE THIS METHOD BECAUSE WE DO NOT WANT THE GAME TO END LIKE THAT WE NEED IT TO GO BACK TO THE APP
         if(isHandEmpty(this.playerIDs[currentPlayer])){
             JLabel msg3 = new JLabel(this.playerIDs[currentPlayer] + " won the game! Thank you for playing");
-            msg3.setFont(new Font("Arial", Font.BOLD, 48));
+            msg3.setFont(new Font("Arial", Font.BOLD, 25));
             JOptionPane.showMessageDialog(null,msg3);
             //System.exit(0);
         }
@@ -245,7 +245,7 @@ public class Game {
             getPlayerHand(plid).add(unoDeck.drawCard());
             getPlayerHand(plid).add(unoDeck.drawCard());
             JLabel msg4 = new JLabel(plid + " draw 4 cards!");
-            msg4.setFont(new Font("Arial", Font.BOLD, 48));
+            msg4.setFont(new Font("Arial", Font.BOLD, 25));
             JOptionPane.showMessageDialog(null,msg4);
         }
 
@@ -254,13 +254,13 @@ public class Game {
             getPlayerHand(plid).add(unoDeck.drawCard());
             getPlayerHand(plid).add(unoDeck.drawCard());
             JLabel msg4 = new JLabel(plid + " draw 2 cards!");
-            msg4.setFont(new Font("Arial", Font.BOLD, 48));
+            msg4.setFont(new Font("Arial", Font.BOLD, 25));
             JOptionPane.showMessageDialog(null,msg4);
         }
         
         if(initialCard.getValue() == UnoCard.Value.Skip){
             JLabel msg4 = new JLabel(playerIDs[currentPlayer] + " was Skipped!");
-            msg4.setFont(new Font("Arial", Font.BOLD, 48));
+            msg4.setFont(new Font("Arial", Font.BOLD, 25));
             JOptionPane.showMessageDialog(null,msg4);
             if(gameDirection == false){
                 currentPlayer = (currentPlayer + 1) % playerIDs.length;

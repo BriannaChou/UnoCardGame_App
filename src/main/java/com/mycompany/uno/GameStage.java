@@ -40,6 +40,7 @@ public class GameStage extends javax.swing.JFrame {
 
     public GameStage(ArrayList<String> playerIds) {
         initComponents();
+        setLocationRelativeTo(null);
         temp = playerIds;
         plids = temp.toArray(new String[temp.size()]);
         game = new Game(plids);
@@ -367,7 +368,7 @@ public class GameStage extends javax.swing.JFrame {
     private void drawACardBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_drawACardBtnActionPerformed
         // draw a card logic
         JLabel msg = new JLabel(game.getCurrentPlayer() + " draw a card!");
-        msg.setFont(new Font("Arial", Font.BOLD, 48));
+        msg.setFont(new Font("Arial", Font.BOLD, 25));
         JOptionPane.showMessageDialog(null,msg);
         try{
             game.submitDraw(game.getCurrentPlayer());

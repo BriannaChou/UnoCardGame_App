@@ -29,6 +29,7 @@ public class PopUp extends javax.swing.JFrame {
     
     public PopUp(String cardName, Game initialGame, int index, ArrayList<JButton> initialCardButtons, GameStage initialGameStage, JButton initialTopCardButton) {
         initComponents();
+        setLocationRelativeTo(null);
         cardImage = cardName;
         this.game = initialGame;
         this.playerHand = game.getPlayerHand(game.getCurrentPlayer());

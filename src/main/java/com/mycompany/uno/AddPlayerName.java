@@ -21,6 +21,7 @@ public class AddPlayerName extends javax.swing.JFrame {
      */
     public AddPlayerName() {
         initComponents();
+        setLocationRelativeTo(null);
         playerIDs = new ArrayList<>();
         playerIDs.add(cpuLabel.getText().trim());//CPU is auto added to playerIDs
     }
@@ -143,7 +144,7 @@ public class AddPlayerName extends javax.swing.JFrame {
         
         if(plidTxtBox.getText().isEmpty()){
             JLabel msg = new JLabel("Please enter your name!");
-            msg.setFont(new Font("Arial", Font.BOLD,48));
+            msg.setFont(new Font("Arial", Font.BOLD,25));
             JOptionPane.showMessageDialog(null,msg);
         }
         else{
@@ -153,7 +154,7 @@ public class AddPlayerName extends javax.swing.JFrame {
             if(playerIDs.size() == 2){
                 plidOneLabel.setText(playerIDs.get(1));
                 JLabel msg = new JLabel("Successful Save!");
-                msg.setFont(new Font("Arial", Font.BOLD,48));
+                msg.setFont(new Font("Arial", Font.BOLD,25));
                 JOptionPane.showMessageDialog(null,msg);
                 plidTxtBox.setText("");
                 System.out.println(playerIDs.get(0) + " " + playerIDs.get(1)); //DELETE LATER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -161,7 +162,7 @@ public class AddPlayerName extends javax.swing.JFrame {
             if(playerIDs.size() == 3){
                 playerIDs.remove(name);
                 JLabel msg = new JLabel("There can only be 2 players!");
-                msg.setFont(new Font("Arial", Font.BOLD,48));
+                msg.setFont(new Font("Arial", Font.BOLD,25));
                 JOptionPane.showMessageDialog(null,msg);
                 plidTxtBox.setText("");
             }
@@ -173,7 +174,7 @@ public class AddPlayerName extends javax.swing.JFrame {
         //First need to check that there are enough players to play!
         if(playerIDs.size() == 0){
             JLabel msg = new JLabel("There must be at least one player!");
-            msg.setFont(new Font("Arial", Font.BOLD,48));
+            msg.setFont(new Font("Arial", Font.BOLD,25));
             JOptionPane.showMessageDialog(null,msg);
             plidTxtBox.setText("");
         }
