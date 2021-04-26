@@ -3,9 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.uno;
+package com.mycompany.uno.images;
 
-import com.mycompany.uno.RulesPage;
 import com.mycompany.uno.UnoPlay;
 
 public class Menu extends javax.swing.JFrame {
@@ -186,4 +185,3 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JTextField title;
     // End of variables declaration//GEN-END:variables
 }
-
