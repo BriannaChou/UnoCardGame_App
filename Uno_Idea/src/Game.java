@@ -61,7 +61,7 @@ public class Game {
     public void play(UnoPlay u) {
 
         Hand [] players = {user, firstCom, secondCom, thirdCom};
-        String [] names = {"You", "Briana", "Alexis", "Adeline"};
+        String [] names = {"You", "Brianna", "Alexis", "Adeline"};
 
         // a computer player plays a card, which is passed to the GUI for display;
         u.setLastCardPlayed (players[turn].comPlay(this, deck, discarded));
