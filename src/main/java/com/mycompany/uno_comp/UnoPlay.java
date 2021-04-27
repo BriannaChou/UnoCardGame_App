@@ -315,8 +315,8 @@ class UnoPlay extends JFrame {
 
         // if the user has no cards left they win
         if (usersHand.getCards().size()==0 || usersHand.getNumberOfCards()<=0) {
-            setWinner("You");
-            setOver(true);
+            dispose();
+            new EndGame(usersName).setVisible(true);
         }
 
         // if the user plays a wild card, set the current color according to the radio button selected
@@ -518,8 +518,9 @@ class UnoPlay extends JFrame {
             UnoPlay f = (UnoPlay) SwingUtilities.getRoot(box);
 
             if (e.getStateChange() == ItemEvent.SELECTED) {
-                JOptionPane.showMessageDialog(f, f.getWinner()+" won!");
-                System.exit(0);
+                System.out.println(f.getWinner() + "THIS IS THE PERSON WHO WON.");
+                dispose();
+                new EndGame(f.getWinner()).setVisible(true);
             }
         }
     }
