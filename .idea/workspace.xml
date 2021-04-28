@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e2f7276d-7544-4f03-b4e4-08997c917ea9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/uno/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/uno/Menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/uno/UnoPlay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/uno/UnoPlay.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -66,21 +65,21 @@
       <screen x="1920" y="23" width="1920" height="1057" />
     </state>
     <state x="2411" y="162" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.23.1920.1057/0.23.1920.985@1920.23.1920.1057" timestamp="1619630782279" />
-    <state width="1419" height="207" key="GridCell.Tab.0.bottom" timestamp="1619632275207">
+    <state width="1419" height="207" key="GridCell.Tab.0.bottom" timestamp="1619632371145">
       <screen x="1920" y="23" width="1920" height="1057" />
     </state>
-    <state width="1419" height="207" key="GridCell.Tab.0.bottom/1920.23.1920.1057/0.23.1920.985@1920.23.1920.1057" timestamp="1619632275207" />
-    <state width="1419" height="207" key="GridCell.Tab.0.center" timestamp="1619632275206">
+    <state width="1419" height="207" key="GridCell.Tab.0.bottom/1920.23.1920.1057/0.23.1920.985@1920.23.1920.1057" timestamp="1619632371145" />
+    <state width="1419" height="207" key="GridCell.Tab.0.center" timestamp="1619632371144">
       <screen x="1920" y="23" width="1920" height="1057" />
     </state>
-    <state width="1419" height="207" key="GridCell.Tab.0.center/1920.23.1920.1057/0.23.1920.985@1920.23.1920.1057" timestamp="1619632275206" />
-    <state width="1419" height="207" key="GridCell.Tab.0.left" timestamp="1619632275205">
+    <state width="1419" height="207" key="GridCell.Tab.0.center/1920.23.1920.1057/0.23.1920.985@1920.23.1920.1057" timestamp="1619632371144" />
+    <state width="1419" height="207" key="GridCell.Tab.0.left" timestamp="1619632371144">
       <screen x="1920" y="23" width="1920" height="1057" />
     </state>
-    <state width="1419" height="207" key="GridCell.Tab.0.left/1920.23.1920.1057/0.23.1920.985@1920.23.1920.1057" timestamp="1619632275205" />
-    <state width="1419" height="207" key="GridCell.Tab.0.right" timestamp="1619632275207">
+    <state width="1419" height="207" key="GridCell.Tab.0.left/1920.23.1920.1057/0.23.1920.985@1920.23.1920.1057" timestamp="1619632371144" />
+    <state width="1419" height="207" key="GridCell.Tab.0.right" timestamp="1619632371145">
       <screen x="1920" y="23" width="1920" height="1057" />
     </state>
-    <state width="1419" height="207" key="GridCell.Tab.0.right/1920.23.1920.1057/0.23.1920.985@1920.23.1920.1057" timestamp="1619632275207" />
+    <state width="1419" height="207" key="GridCell.Tab.0.right/1920.23.1920.1057/0.23.1920.985@1920.23.1920.1057" timestamp="1619632371145" />
   </component>
 </project>
