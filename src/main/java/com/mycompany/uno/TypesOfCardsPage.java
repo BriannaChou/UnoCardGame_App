@@ -14,6 +14,7 @@ public class TypesOfCardsPage extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         jTextArea1.setEditable(false);
+        setResizable(false);
     }
 
     /**
@@ -35,7 +36,7 @@ public class TypesOfCardsPage extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(500, 500));
 
-        jPanel1.setBackground(new java.awt.Color(225, 252, 255));
+        jPanel1.setBackground(new java.awt.Color(150, 0, 0));
         jPanel1.setLocation(new java.awt.Point(500, 500));
 
         jTextArea1.setBackground(new java.awt.Color(250, 250, 215));
@@ -60,7 +61,7 @@ public class TypesOfCardsPage extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Futura", 0, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Sherif", 0, 24)); // NOI18N
         jLabel1.setText("Types Of Cards");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

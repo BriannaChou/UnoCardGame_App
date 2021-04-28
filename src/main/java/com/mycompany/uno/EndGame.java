@@ -14,6 +14,7 @@ public class EndGame extends javax.swing.JFrame{
         msg = nameOfWinner + " WON! Congratulations!";
         initComponents();
         setLocationRelativeTo(null);
+        setResizable(false);
     }
 
     /**

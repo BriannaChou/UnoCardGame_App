@@ -14,6 +14,7 @@ public class RulesPage extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         jTextArea1.setEditable(false);
+        setResizable(false);
     }
 
     /**
@@ -36,12 +37,12 @@ public class RulesPage extends javax.swing.JFrame {
         setLocation(new java.awt.Point(500, 500));
         setSize(new java.awt.Dimension(600, 500));
 
-        jPanel1.setBackground(new java.awt.Color(228, 249, 255));
+        jPanel1.setBackground(new java.awt.Color(150, 0, 0));
 
         rulesLabel.setBackground(new java.awt.Color(255, 255, 255));
-        rulesLabel.setFont(new java.awt.Font("Futura", 0, 24)); // NOI18N
+        rulesLabel.setFont(new java.awt.Font("Sherif", 0, 35)); // NOI18N
         rulesLabel.setForeground(new java.awt.Color(0, 0, 0));
-        rulesLabel.setText("                     Rules");
+        rulesLabel.setText("             Rules");
 
         jTextArea1.setBackground(new java.awt.Color(250, 250, 215));
         jTextArea1.setColumns(20);

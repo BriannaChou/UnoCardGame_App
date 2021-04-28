@@ -77,7 +77,7 @@ class UnoPlay extends JFrame {
         initializeComputerPanel ();
 
         // show the current game color and value at the bottom
-        gameStatus = new JLabel ("Current color: none/nCurrent value: none.");
+        gameStatus = new JLabel ("Current color: none || Current value: none.");
         gameStatus.setFont(new java.awt.Font("Futura", 0, 20));
         c.insets = new Insets(20, 0, 0, 20);
         c.weightx = 0.15;
