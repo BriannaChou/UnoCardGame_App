@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2f7276d-7544-4f03-b4e4-08997c917ea9" name="Default Changelist" comment="" />
+    <list default="true" id="e2f7276d-7544-4f03-b4e4-08997c917ea9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/uno/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/uno/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/uno/UnoPlay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/uno/UnoPlay.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,8 +28,8 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager">
-    <configuration name="GameStage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.mycompany.uno.GameStage" />
+    <configuration name="Menu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.mycompany.uno.Menu" />
       <module name="Uno" />
       <extension name="coverage">
         <pattern>
@@ -39,11 +43,14 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.GameStage" />
+        <item itemvalue="Application.Menu" />
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="e2f7276d-7544-4f03-b4e4-08997c917ea9" name="Default Changelist" comment="" />
@@ -53,5 +60,27 @@
       <updated>1616547907889</updated>
     </task>
     <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2411" y="162" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1619630782279">
+      <screen x="1920" y="23" width="1920" height="1057" />
+    </state>
+    <state x="2411" y="162" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.23.1920.1057/0.23.1920.985@1920.23.1920.1057" timestamp="1619630782279" />
+    <state width="1419" height="208" key="GridCell.Tab.0.bottom" timestamp="1619631114431">
+      <screen x="1920" y="23" width="1920" height="1057" />
+    </state>
+    <state width="1419" height="208" key="GridCell.Tab.0.bottom/1920.23.1920.1057/0.23.1920.985@1920.23.1920.1057" timestamp="1619631114431" />
+    <state width="1419" height="208" key="GridCell.Tab.0.center" timestamp="1619631114430">
+      <screen x="1920" y="23" width="1920" height="1057" />
+    </state>
+    <state width="1419" height="208" key="GridCell.Tab.0.center/1920.23.1920.1057/0.23.1920.985@1920.23.1920.1057" timestamp="1619631114430" />
+    <state width="1419" height="208" key="GridCell.Tab.0.left" timestamp="1619631114430">
+      <screen x="1920" y="23" width="1920" height="1057" />
+    </state>
+    <state width="1419" height="208" key="GridCell.Tab.0.left/1920.23.1920.1057/0.23.1920.985@1920.23.1920.1057" timestamp="1619631114430" />
+    <state width="1419" height="208" key="GridCell.Tab.0.right" timestamp="1619631114431">
+      <screen x="1920" y="23" width="1920" height="1057" />
+    </state>
+    <state width="1419" height="208" key="GridCell.Tab.0.right/1920.23.1920.1057/0.23.1920.985@1920.23.1920.1057" timestamp="1619631114431" />
   </component>
 </project>
