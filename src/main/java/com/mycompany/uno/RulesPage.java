@@ -37,7 +37,7 @@ public class RulesPage extends javax.swing.JFrame {
         setLocation(new java.awt.Point(500, 500));
         setSize(new java.awt.Dimension(600, 500));
 
-        jPanel1.setBackground(new java.awt.Color(150, 0, 0));
+        jPanel1.setBackground(new java.awt.Color(102, 178, 255));
 
         rulesLabel.setBackground(new java.awt.Color(255, 255, 255));
         rulesLabel.setFont(new java.awt.Font("Sherif", 0, 35)); // NOI18N

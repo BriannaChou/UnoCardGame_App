@@ -36,7 +36,7 @@ public class TypesOfCardsPage extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(500, 500));
 
-        jPanel1.setBackground(new java.awt.Color(150, 0, 0));
+        jPanel1.setBackground(new java.awt.Color(102, 178, 255));
         jPanel1.setLocation(new java.awt.Point(500, 500));
 
         jTextArea1.setBackground(new java.awt.Color(250, 250, 215));
