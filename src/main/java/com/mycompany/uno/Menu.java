@@ -7,6 +7,9 @@ package com.mycompany.uno;
 
 import com.mycompany.uno.RulesPage;
 import com.mycompany.uno.UnoPlay;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 public class Menu extends javax.swing.JFrame {
 
@@ -16,7 +19,6 @@ public class Menu extends javax.swing.JFrame {
     public Menu() {
         initComponents();
         setLocationRelativeTo(null);
-        title.setEditable(false);
     }
 
     /**
@@ -29,27 +31,17 @@ public class Menu extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        title = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(200, 500));
-
-        jPanel1.setBackground(new java.awt.Color(228, 249, 255));
+        
+        //jPanel1.setBackground(new java.awt.Color(228, 249, 255));
         jPanel1.setLocation(new java.awt.Point(200, 500));
+        jPanel1.setPreferredSize(new java.awt.Dimension(900,700));
 
-        title.setBackground(new java.awt.Color(250, 250, 215));
-        title.setFont(new java.awt.Font("Futura", 1, 24)); // NOI18N
-        title.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        title.setText("Uno Card Game");
-        title.setBorder(new javax.swing.border.MatteBorder(null));
-        title.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                titleActionPerformed(evt);
-            }
-        });
 
         jButton1.setFont(new java.awt.Font("Futura", 0, 16)); // NOI18N
         jButton1.setText("Play Game");
@@ -75,7 +67,36 @@ public class Menu extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
+        //adding buttons to JPanel to show above background image
+        jPanel1.add(jButton1);
+        jPanel1.add(jButton2);
+        jPanel1.add(jButton3);
 
+        /*      
+        *Code to decorate the title screen
+        */
+        JLabel logo;
+        setSize(200,100);
+        setLayout(null);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);    
+        ImageIcon img = new ImageIcon("Uno_Logo.png");
+        logo = new JLabel("",img,JLabel.CENTER);
+        logo.setBounds(235,85,400,200);
+        jPanel1.add(logo);
+        logo.setVisible(true);
+        logo.setOpaque(false);
+        
+        JLabel background;
+        setSize(500,350);
+        setLayout(null);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);    
+        ImageIcon img2 = new ImageIcon("Uno_Background.png");
+        background = new JLabel("",img2,JLabel.CENTER);
+        background.setBounds(0,0,900,700);
+        jPanel1.add(background);
+        background.setVisible(true);
+        background.setOpaque(false);
+        
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -88,17 +109,12 @@ public class Menu extends javax.swing.JFrame {
                                                         .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                         .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                         .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                                .addGap(222, 222, 222))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                                .addComponent(title, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(107, 107, 107))))
-        );
+                                                .addGap(400, 400, 400))
+        )));
         jPanel1Layout.setVerticalGroup(
                 jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(44, 44, 44)
-                                .addComponent(title, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(44, 44, 44)
+                                .addGap(300, 300, 300)
                                 .addComponent(jButton1)
                                 .addGap(18, 18, 18)
                                 .addComponent(jButton2)
@@ -119,13 +135,11 @@ public class Menu extends javax.swing.JFrame {
         );
 
         pack();
+        
     }// </editor-fold>//GEN-END:initComponents
 
-    private void titleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_titleActionPerformed
-        // Title
-        title.setEditable(false);
-    }//GEN-LAST:event_titleActionPerformed
-
+    
+    
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // Changes to rules page
         this.dispose();
