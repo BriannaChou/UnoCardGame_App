@@ -1,5 +1,8 @@
 package com.mycompany.uno;
 
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 import javax.xml.namespace.QName;
 
 public class EndGame extends javax.swing.JFrame{
@@ -34,10 +37,10 @@ public class EndGame extends javax.swing.JFrame{
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(200, 500));
 
-        jPanel1.setBackground(new java.awt.Color(228, 249, 255));
         jPanel1.setLocation(new java.awt.Point(200, 500));
+       jPanel1.setPreferredSize(new java.awt.Dimension(600,350));
 
-        title.setBackground(new java.awt.Color(250, 250, 215));
+
         title.setFont(new java.awt.Font("Futura", 1, 20)); // NOI18N
         title.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         title.setText(this.msg);
@@ -65,6 +68,21 @@ public class EndGame extends javax.swing.JFrame{
                 jButton3ActionPerformed(evt);
             }
         });
+        
+        jPanel1.add(jButton1);
+        jPanel1.add(jButton3);
+        jPanel1.add(title);
+        
+        JLabel background;
+        setSize(600,500);
+        setLayout(null);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);    
+        ImageIcon img = new ImageIcon("End_game.png");
+        background = new JLabel("",img,JLabel.CENTER);
+        background.setBounds(0,0,600,400);
+        jPanel1.add(background);
+        background.setVisible(true);
+        background.setOpaque(false);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -87,10 +105,10 @@ public class EndGame extends javax.swing.JFrame{
                         .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(44, 44, 44)
                                 .addComponent(title, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(44, 44, 44)
+                                .addGap(200, 200, 200)
                                 .addComponent(jButton1)
                                 .addGap(18, 18, 18)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
+                                //.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
                                 .addComponent(jButton3)
                                 .addGap(26, 26, 26))
         );
