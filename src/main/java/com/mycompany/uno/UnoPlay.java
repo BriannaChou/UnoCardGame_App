@@ -60,7 +60,7 @@ class UnoPlay extends JFrame {
     public UnoPlay () {
 
         setTitle("Uno Card Game");
-        setSize(1000, 800);
+        setSize(3000, 850);
         setLocation(200, 50);
 
         // use nested JPanels
@@ -77,10 +77,14 @@ class UnoPlay extends JFrame {
         initializeComputerPanel ();
 
         // show the current game color and value at the bottom
-        gameStatus = new JLabel ("current color: none; current value: none.");
+        gameStatus1 = new JLabel ("current color: none");
+        gameStatus1 = new JLabel ("current value: none");
+        gameStatus1.setFont(new java.awt.Font("Futura", 0, 20));
+        gameStatus2.setFont(new java.awt.Font("Futura", 0, 20));
         c.insets = new Insets(20, 0, 0, 20);
         c.weightx = 0.15;
-        addToComputerPanel(gameStatus, 2, 2, 1, 1);
+        addToComputerPanel(gameStatus1, 2, 2, 1, 1);
+        addToComputerPanel(gameStatus2, 2, 2, 1, 1);
 
         // add all the child panels to the main panel
         userPanel.setAlignmentX(Component.LEFT_ALIGNMENT);
@@ -277,8 +281,10 @@ class UnoPlay extends JFrame {
 
     // sets the gameStatus label.
     public void setGameStatus (String color, String value) {
-        String s = "current color: " + color + "; current value: " + value;
-        gameStatus.setText(s);
+        String s1 = "current color: " + color;
+        String s2 = "current value: " + value;
+        gameStatus1.setText(s1);
+        gameStatus2.setText(s2);
     }
 
     // selects or deselect the game over checkbox.
