@@ -4,134 +4,108 @@
  * and open the template in the editor.
  */
 package com.mycompany.uno;
-import java.util.ArrayList;
-import java.util.Random;
-import javax.swing.ImageIcon;
 
 /**
- *
- * @author briannachou
- * Deck contains 108 cards.
+ * author: JT Emnett
  */
 
+/**
+ * A deck holds an ArrayList of Card objects, and has methods to add and remove cards and shuffle.
+ */
 
-public class UnoDeck {
-    private UnoCard[] cards;
-    private int cardsInDeck;
+import java.util.Arrays;
+import java.util.ArrayList;
+import java.io.*;
+import java.util.*;
 
-    public UnoDeck(){
-        cards = new UnoCard[120]; //originally 108
-        reset();
-    }
+class Deck {
+    private ArrayList<Card> cards;
+    private int numberOfCards;
 
-    public void reset(){
-        UnoCard.Color[] colors = UnoCard.Color.values();
-        cardsInDeck = 0;
+    // constructor; when no argument is passed, initialize a whole deck with 108 cards
+    public Deck () {
+        numberOfCards = 108;
+        cards = new ArrayList<Card>(numberOfCards);
 
-        for(int i = 0; i < colors.length-1;i++){ //Add color
-            UnoCard.Color color = colors[i];
-            cards[cardsInDeck] = new UnoCard(color, UnoCard.Value.getValue(0)); //Add a single zero card !!!!!!!!!!!!!!!!!!!!!!!!!!
+        String[] colors = {"R", "B", "Y", "G"};
 
-            for(int j = 1; j < 10; j++){ //Add two cards of each number. 1-9 cards.
-                cards[cardsInDeck++] = new UnoCard(color,UnoCard.Value.getValue(j));
-                cards[cardsInDeck++] = new UnoCard(color,UnoCard.Value.getValue(j));
+        // iterate through all the colors
+        for (int i=0; i<4; i++) {
+
+            // each color only has one "0"
+            cards.add(i*25, new Card (colors[i], "0", 1, 0, 0));
+
+            for (int j=1; j<19; j+=2) {
+                cards.add(i*25+j, new Card (colors[i], j/2+1+"", 1, 0, 0) ) ;
+                cards.add(i*25+j+1, new Card (colors[i], j/2+1+"", 1, 0, 0) );
             }
+            // each color has some action cards
+            cards.add( 19+i*25, new Card (colors[i], "Draw2", 1, 2, 0) );
+            cards.add( 20+i*25, new Card (colors[i], "Draw2", 1, 2, 0) );
+            cards.add( 21+i*25, new Card (colors[i], "Reverse", -1, 0, 0) );
+            cards.add( 22+i*25, new Card (colors[i], "Reverse", -1, 0, 0) );
+            cards.add( 23+i*25, new Card (colors[i], "Skip", 1, 0, 1) );
+            cards.add( 24+i*25, new Card (colors[i], "Skip", 1, 0, 1) );
+        }
 
-            UnoCard.Value[] specialValues = new UnoCard.Value[]{UnoCard.Value.DrawTwo, UnoCard.Value.Skip};
-            for(UnoCard.Value value : specialValues){ //Starting at first value in array values, and creating two cards of special cards.
-                cards[cardsInDeck++] = new UnoCard(color, value);
-                cards[cardsInDeck++] = new UnoCard(color, value);
-            }
-
-            UnoCard.Value[] wildValues = new UnoCard.Value[]{UnoCard.Value.Wild, UnoCard.Value.WildDrawFour};
-            for(UnoCard.Value value : wildValues){
-                for(int x = 0; x < 4; x++){ 
-                    cards[cardsInDeck++] = new UnoCard(UnoCard.Color.Wild, value);
-                }
-
-            }
+        // wild cards don't have a set color
+        for (int i=100; i<104; i++) {
+            cards.add( i, new Card ("W", "Wild", 1, 0, 0) );
+        }
+        for (int i=104; i<108; i++) {
+            cards.add( i, new Card ("W", "WDraw4", 1, 4, 0) );
         }
     }
 
-    /**
-     * @param cards (pile)
-     * After deck runs out, it will replace it with the pile.
-     */
-    public void replaceDeckWith(ArrayList<UnoCard> cards){
-        this.cards = cards.toArray(new UnoCard[cards.size()]);
-        this.cardsInDeck = this.cards.length;
+    // constructor with number of cards an argument
+    public Deck (int numberOfCards) {
+        cards = new ArrayList<Card>(numberOfCards);
+        // set to 0 now because the numberOfCards increments when addCard is called later
+        this.numberOfCards = 0;
     }
 
-    /**
-     * @return
-     * Checks if there are no cards in the deck.
-     */
-    public boolean isEmpty(){
-        return cardsInDeck == 0;
+    // constructor with another deck object passed as an argument
+    public Deck (Deck d) {
+        this.numberOfCards = d.getNumberOfCards();
+        this.cards = d.getCards();
     }
 
-    /**
-     * Shuffles the deck
-     */
-    public void shuffle(){
-        int len = this.cards.length;
-        Random random = new Random();
-
-        for(int i = 0; i < this.cards.length; i++){
-            /**
-             * Get a random index of the array past its current index
-             * ... Then the argument is an exclusive bound.
-             * Swap the random element with the present element.
-             */
-
-            int randomVal = i + random.nextInt(len - i);
-            UnoCard randomCard = cards[randomVal];
-            cards[randomVal] = cards[i]; //Swap
-            cards[i] = randomCard; //Swap
-        }
+    //return number of cards in the deck
+    public int getNumberOfCards () {
+        return numberOfCards;
     }
 
-    /**
-     * Draws a single uno card from the deck
-     */
-    public UnoCard drawCard() throws IllegalArgumentException {
-        if (isEmpty()){
-            throw new IllegalArgumentException("A card cannot be drawn since there is no card in the deck!");
-        }
-        return cards[--cardsInDeck]; //Returns the card at the top of the deck
+    //sets number of cards in the deck
+    public void setNumberOfCards (int numberOfCards) {
+        this.numberOfCards = numberOfCards;
     }
 
-    /**
-     * Draw multiple uno cards from deck. Used for when someone hits you with the +2 or +4
-     */
-    public UnoCard[] drawMultipleCards(int num) throws IllegalArgumentException {
-        //Checking for illegal plays
-        if (isEmpty()){
-            throw new IllegalArgumentException("A card cannot be drawn since there is no card in the deck!");
-        }
-        if (num < 0){
-            throw new IllegalArgumentException("Must draw positive number of cards. Tried to draw" + num + " cards");
-        }
-        if (num > cardsInDeck){
-            throw new IllegalArgumentException("Cannot draw" + num + " cards since there are only " + cardsInDeck + " cards in the deck.");
-
-        }
-
-        UnoCard[] returnCards = new UnoCard[num];
-        for (int i = 0; i < num; i++){
-            returnCards[i] = cards[--cardsInDeck];
-        }
-        return returnCards;
+   //returns and ArrayList with cards in the deck
+    public ArrayList<Card> getCards () {
+        return cards;
     }
 
-    /**
-     * GUI game, so...
-     * We need top card image, so we need to return an image icon.
-     */
-    public ImageIcon drawCardImage() throws IllegalArgumentException { //HELP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! WEEWOO
-        if (isEmpty()){
-            throw new IllegalArgumentException("A card cannot be drawn since there is no card in the deck!");
+    //adds cards to players hand
+    public void addCard (Card c) {
+        cards.add(c);
+        numberOfCards++;
+    }
+
+    //removes cards at a given index from the deck
+    public Card removeCard (int index) {
+        numberOfCards--;
+        return cards.remove (index);
+    }
+
+    //shuffles the deck
+    public void shuffle () {
+        // randomly exchange the positions of two cards in the ArrayList for 150 times
+        for (int i=0;i<150; i++) {
+            int a = UnoPlay.rint(0, cards.size()-1);
+            int b = UnoPlay.rint(0, cards.size()-1);
+            Card temp = cards.get(a);
+            cards.set (a, cards.get(b));
+            cards.set (b, temp);
         }
-        return new ImageIcon(cards[--cardsInDeck].toString() + "png");
     }
 }

@@ -1,3 +1,10 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.mycompany.uno;
+
 /**
  * author: JT Emnett
  */
@@ -34,6 +41,7 @@ class UnoPlay extends JFrame {
     private JRadioButton [] wildColors;
     private ButtonGroup buttonGroup;
     private JLabel gameStatus;
+    private JLabel discardPile;
 
     // fields for the game
     private Game game;
@@ -72,7 +80,7 @@ class UnoPlay extends JFrame {
         gameStatus = new JLabel ("current color: none; current value: none.");
         c.insets = new Insets(20, 0, 0, 20);
         c.weightx = 0.15;
-        addToComputerPanel(gameStatus, 4, 0, 2, 1);
+        addToComputerPanel(gameStatus, 2, 2, 1, 1);
 
         // add all the child panels to the main panel
         userPanel.setAlignmentX(Component.LEFT_ALIGNMENT);
@@ -147,7 +155,6 @@ class UnoPlay extends JFrame {
             cardButtons.add (i, b);
         }
     }
-
 
     //Initialize the panel with the radio buttons
     //Would like this to be a popup like our current game
@@ -371,7 +378,7 @@ class UnoPlay extends JFrame {
 
         // use a timer to create a delay between each player
         // it will make it feel like it is actually playing and going back to the user
-        timer = new Timer ( 1000,
+        timer = new Timer ( 1500,
                 new ActionListener() {
                     public void actionPerformed (ActionEvent ae) {
                         int t = game.getTurn();
@@ -390,7 +397,7 @@ class UnoPlay extends JFrame {
                             setComCard(t);
 
                             // reset the text at the bottom about the current game color and value
-                            String [] names = {usersName, "Janet", "Bender", "Dolores"};
+                            String [] names = {usersName, "Brianna", "Alexis", "Adeline"};
                             setLabelText (lNames[t], names[t], game.getHands()[t].getNumberOfCards());
                             String c = "";
                             if (game.getCurrentColor().equals("R")) c = "red";
@@ -448,7 +455,6 @@ class UnoPlay extends JFrame {
     }
 
     // sets the background color of a JButton based on the color of the corresponding card.
-    //SHOULD WORK BUT ISNT ON MY COMPUTER !
     public void setButtonColor (String c, JButton b) {
         if (c.equals("R")) {
             b.setBackground(new Color(236, 14, 11));
@@ -464,6 +470,7 @@ class UnoPlay extends JFrame {
             b.setBackground(Color.WHITE);
         }
     }
+
 
     // sets the size, margin and font of a button.
     public void setButtonFormat (JButton b) {
@@ -529,7 +536,7 @@ class UnoPlay extends JFrame {
         }
     }
 
-    // ActionListener for when the user click the draw button.
+    // ActionListener for when the user clicks the draw button.
     class DrawClicker implements ActionListener {
 
         public void actionPerformed(ActionEvent e) {
@@ -580,3 +587,4 @@ class UnoPlay extends JFrame {
         app.setDefaultCloseOperation (JFrame.EXIT_ON_CLOSE);
     }
 }
+
