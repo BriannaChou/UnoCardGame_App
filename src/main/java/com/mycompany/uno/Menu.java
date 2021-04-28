@@ -39,7 +39,6 @@ public class Menu extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(200, 500));
         
-        //jPanel1.setBackground(new java.awt.Color(228, 249, 255));
         jPanel1.setLocation(new java.awt.Point(200, 500));
         jPanel1.setPreferredSize(new java.awt.Dimension(900,700));
 
@@ -113,12 +112,12 @@ public class Menu extends javax.swing.JFrame {
                                                         .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                         .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                         .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                                .addGap(400, 400, 400))
+                                                .addGap(350, 350, 350))
         )));
         jPanel1Layout.setVerticalGroup(
                 jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(300, 300, 300)
+                                .addGap(320, 320, 320)
                                 .addComponent(jButton1)
                                 .addGap(18, 18, 18)
                                 .addComponent(jButton2)
