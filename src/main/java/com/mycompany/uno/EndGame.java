@@ -14,7 +14,7 @@ public class EndGame extends javax.swing.JFrame{
 
     public EndGame(String winnerName) {
         nameOfWinner = winnerName;
-        msg = nameOfWinner + " WON! Congratulations!";
+        msg = nameOfWinner + " WON!";
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
@@ -172,7 +172,7 @@ public class EndGame extends javax.swing.JFrame{
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new EndGame("WINNNNNNNERRRRR").setVisible(true);
+                new EndGame("winner").setVisible(true);
             }
         });
     }
